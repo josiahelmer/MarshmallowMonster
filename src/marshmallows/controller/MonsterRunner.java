@@ -1,4 +1,4 @@
-package MonsterController.java;
+package marshmallows.controller;
 
 public class MonsterRunner
 {

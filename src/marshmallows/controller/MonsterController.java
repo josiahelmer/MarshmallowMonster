@@ -1,4 +1,4 @@
-package MonsterController.java;
+package marshmallows.controller;
 
 import marshmallows.model.MarshmallowMonster;
 import marshmallows.view.MonsterDisplay;
@@ -36,4 +36,8 @@ public class MonsterController
 		System.out.println("I want a new name for a monster, type one please!");
 		String newMonsterName = monsterScanner.next();
 		josiahMonster.setMonsterName(newMonsterName);
+		System.out.println("Give me a new number of noses");
+		int updatedNoses = monsterScanner.nextInt();
+		
 	}
+}

@@ -76,5 +76,6 @@ public class MarshmallowMonster
 	{
 		String monsterInfo = "My monster has" + monsterLegs
 							+ " legs and its' name is " + monsterName;
+		return monsterInfo;
 	}
 }
