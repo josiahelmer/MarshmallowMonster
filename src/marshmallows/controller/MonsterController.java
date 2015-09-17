@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class MonsterController
 {
 	private MarshmallowMonster josiahMonster;
+	private MarshmallowMonster userMonster;
 	private MonsterDisplay myDisplay;
 	private Scanner monsterScanner;
 	
@@ -27,8 +28,8 @@ public class MonsterController
 	public void start()
 	{
 		myDisplay.displayInfo(josiahMonster.toString());
-		askQuestions();
-		myDisplay.displayInfo("Updated monster info: " + josiahMonster.toString());
+		createUserMonster();
+		myDisplay.displayInfo("Updated monster info: " + userMonster.toString());
 	}
 	
 	private void askQuestions()
@@ -38,6 +39,35 @@ public class MonsterController
 		josiahMonster.setMonsterName(newMonsterName);
 		System.out.println("Give me a new number of noses");
 		int updatedNoses = monsterScanner.nextInt();
+		josiahMonster.setMonsterNoses(newMonsterNoses);
+		System.out.println("Give me a new number of eyes");
+		int updatedEyes = monsterScanner.nextInt();
+		System.out.println("Give men a new number of legs");
+		double updatedlegs = monsterScanner.nextDouble();
+	}
+
+	/**
+	 * Creates a MarshMallowMonster instance from user input
+	 */
+	private void createUserMonster()
+	{
+		//Step one: Gather user information
+		System.out.println("What is your Monster name?");
+		String userName;
+		userName = monsterScanner.nextLine();
+		System.out.println("How many legs will it have? This is a Decimal value");
+		double userLegs = monsterScanner.nextDouble();
+		System.out.println("How much hair does it have, another decimal value");
+		double userHair;
+		userHair = monsterScanner.nextDouble();
+		System.out.println("Does is have a belly button - true false");
+		boolean hasBellyButton = monsterScanner.nextBoolean();
+		System.out.println("Numr of eyes on the monster");
+		int userEyes = monsterScanner. nextInt();
+		System.out.println("How mannoses does it have");
+		int userNoses = monsterScanner.nextInt();
 		
+		//Step two: Build the monster using the constructor.
+		userMonster = new MarshmallowMonster(userName, userEyes, userNoses, hasBellyButton, userLegs, userHair);
 	}
 }

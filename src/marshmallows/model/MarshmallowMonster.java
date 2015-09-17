@@ -20,6 +20,8 @@ public class MarshmallowMonster
 		this.monsterEyes = monsterEyes;
 		this.monsterBellyButton = monsterBellyButton;
 		this.monsterNoses = monsterNoses;
+		this.monsterLegs = monsterLegs;
+		this.monsterHair = monsterHair;
 	}
 	public String getMonsterName()
 	{
