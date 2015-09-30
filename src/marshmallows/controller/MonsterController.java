@@ -39,11 +39,12 @@ public class MonsterController
 		josiahMonster.setMonsterName(newMonsterName);
 		System.out.println("Give me a new number of noses");
 		int updatedNoses = monsterScanner.nextInt();
-		josiahMonster.setMonsterNoses(newMonsterNoses);
 		System.out.println("Give me a new number of eyes");
 		int updatedEyes = monsterScanner.nextInt();
-		System.out.println("Give men a new number of legs");
+		System.out.println("Give me a new number of legs");
 		double updatedlegs = monsterScanner.nextDouble();
+		System.out.println("Gve me a number of hairs");
+		double updatedhairs = monsterScanner.nextDouble();
 	}
 
 	/**
@@ -62,9 +63,9 @@ public class MonsterController
 		userHair = monsterScanner.nextDouble();
 		System.out.println("Does is have a belly button - true false");
 		boolean hasBellyButton = monsterScanner.nextBoolean();
-		System.out.println("Numr of eyes on the monster");
+		System.out.println("Numr of eyes on the monster?");
 		int userEyes = monsterScanner. nextInt();
-		System.out.println("How mannoses does it have");
+		System.out.println("How manny noses does it have?");
 		int userNoses = monsterScanner.nextInt();
 		
 		//Step two: Build the monster using the constructor.
