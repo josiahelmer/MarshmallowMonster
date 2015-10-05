@@ -1,15 +1,15 @@
 package marshmallows.controller;
 
 import marshmallows.model.MarshmallowMonster;
-import marshmallows.view.MonsterDisplay;
 import java.util.Scanner;
+import marshmallows.view.PopupDisplay;
 
 public class MonsterController
 {
 	private MarshmallowMonster josiahMonster;
 	private MarshmallowMonster userMonster;
-	private MonsterDisplay myDisplay;
 	private Scanner monsterScanner;
+	private PopupDisplay myPopups;
 	
 	public MonsterController()
 	{
@@ -21,22 +21,26 @@ public class MonsterController
 		boolean hasBellyButton = true;
 		
 		monsterScanner = new Scanner(System.in);
-		myDisplay = new MonsterDisplay();
+
 		josiahMonster = new MarshmallowMonster(name, eyes, noses, hasBellyButton, legs, hair);
+		myPopups = new PopupDisplay();
 	}
 
 	public void start()
 	{
-		myDisplay.displayInfo(josiahMonster.toString());
-		createUserMonster();
-		myDisplay.displayInfo("Updated monster info: " + userMonster.toString());
+		myPopups.displayResponse("My monster's name is Norlark");
+		
+		String newMonsterName = myPopups.getAnswer("I want a new name for the monster, type one in please!");
+		josiahMonster.setMonsterName(newMonsterName);
+		
+		int monsterNoses;
+		 String monsterNoses = myPopups.getAnswer("Give me a number of noses");
+		 int monsterNoses = monsterScanner.nextInt();
 	}
 	
 	private void askQuestions()
 	{
-		System.out.println("I want a new name for a monster, type one please!");
-		String newMonsterName = monsterScanner.next();
-		josiahMonster.setMonsterName(newMonsterName);
+	
 		System.out.println("Give me a new number of noses");
 		int updatedNoses = monsterScanner.nextInt();
 		System.out.println("Give me a new number of eyes");
